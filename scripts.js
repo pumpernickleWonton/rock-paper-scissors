@@ -1,40 +1,44 @@
+
+//Function to randomly select computer choice based on a random number between 0-99
+
 function getComputerChoice(){
-    let computerSelection = Math.floor(Math.random() * 100);
-    if (computerSelection <= 33){
-        console.log("Rock");
-    } else if (computerSelection > 33 && computerSelection <= 66) {
-        console.log("Paper");
-    } else if (computerSelection > 66 && computerSelection <= 99) {
-        console.log("Scissors");
+    let num1 = Math.random();
+    console.log(num1);
+    if (num1 <= 0.33){
+        return ("rock");
+    } else if (num1 > 0.33 && num1 <= 0.66) {
+        return ("paper");
+    } else if (num1 > 0.66 && num1 <= 0.99) {
+        return ("scissors");
     }
 }
 console.log(getComputerChoice());
 
-function playerSelection(str) {
-    let playerChoice = prompt("Rock, Paper, Scissors, SHOOT!");
-    playerChoice = playerChoice.toLowerCase;
+function playerPlay() {
+    const ask = prompt("Rock, Paper, Scissors, SHOOT!").toLowerCase();
+    return ask;
 }
 
-// console.log(playerSelection());
+//Get selections for a playRound and return a result based on the result. (Might be a good idea to rewrite this as a switch)
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == "rock" && computerSelection == "rock") {
-        console.log("It\'s a Tie!");
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
-        console.log("You Lose!");
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        console.log("You Win!!");
-    } else if (playerSelection == "paper" && computerSelection == "paper") {
-        console.log("It\'s a Tie!");
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        console.log("You Win!!");
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        console.log("You Lose!");
-    } else if (playerSelection == "scissors" && computerSelection == "scissors") {
-        console.log("It\'s a Tie!");
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        console.log("You Win!");
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        console.log("You Lose!")
+    if (playerSelection === computerSelection) {
+        return "It\'s a Tie!";
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        return "You Lose! Paper beats Rock";
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        return "You Win! Rock beats Scissors!";
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        return "You Win! Paper beats Rock";
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return "You Lose! Scissors beats Paper";
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        return "You Win! Scissors beats Paper";
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return "You Lose! Rock beats Scissors"
     }
 }
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
