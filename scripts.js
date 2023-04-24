@@ -3,7 +3,6 @@
 
 function getComputerChoice(){
     let num1 = Math.random();
-    console.log(num1);
     if (num1 <= 0.33){
         return ("rock");
     } else if (num1 > 0.33 && num1 <= 0.66) {
@@ -11,8 +10,17 @@ function getComputerChoice(){
     } else if (num1 > 0.66 && num1 <= 0.99) {
         return ("scissors");
     }
+}
 
-//Get selections for a playRound and return a result based on the result. (Might be a good idea to rewrite this as a switch)
+function playerMove() {
+    let ask = prompt("Rock, Paper, Scissors, SHOOT!");
+    return ask.toLowerCase();
+}
+
+//Store functions for Player and Computer move choices to a const variable
+
+const playerSelection = playerMove();
+const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -31,3 +39,8 @@ function playRound(playerSelection, computerSelection) {
         return "You Lose! Rock beats Scissors"
     }
 }
+
+console.log(playerSelection);
+console.log(computerSelection);
+
+console.log(playRound(playerSelection, computerSelection));
