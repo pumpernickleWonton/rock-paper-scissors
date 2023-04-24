@@ -1,0 +1,11 @@
+How to Make: Rock, Paper, Scissors!
+
+1. Have the Computer select a move
+2. Have the Player Select a move
+3. Compare the two Moves
+4. Decide the Winner of the match
+5. Increase the Winner's score
+6. Repeat steps 1-5 until either side has 5 Points
+7. At 5 points, announce the winner of the Game
+8. Ask the Player if they would like to play again
+9. Reset the Game
