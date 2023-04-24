@@ -11,13 +11,6 @@ function getComputerChoice(){
     } else if (num1 > 0.66 && num1 <= 0.99) {
         return ("scissors");
     }
-}
-console.log(getComputerChoice());
-
-function playerPlay() {
-    const ask = prompt("Rock, Paper, Scissors, SHOOT!").toLowerCase();
-    return ask;
-}
 
 //Get selections for a playRound and return a result based on the result. (Might be a good idea to rewrite this as a switch)
 
@@ -38,7 +31,3 @@ function playRound(playerSelection, computerSelection) {
         return "You Lose! Rock beats Scissors"
     }
 }
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
