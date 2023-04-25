@@ -47,13 +47,12 @@ function playRound(playerSelection, computerSelection) {
 
 
 //Run full game 
-//KNOWN ISSUE loop iterates until BOTH scores are 5
-//not enough loop knowledge yet to fix, will move forward with lessons
+
 function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    while (playerScore < 5 || computerScore < 5) {
+    while ((playerScore || computerScore) < 5) {
         const result = playRound(getPlayerMove(), getComputerChoice());
         console.log(result);
         if(result.includes("Win")) {
