@@ -1,6 +1,23 @@
 
-//Function to randomly select computer choice based on a random number between 0-99
+const container = document.querySelector('#container');
 
+const player = document.createElement('h3');
+player.innerHTML = "Player chose: ";
+
+const computer = document.createElement('h3');
+computer.innerHTML = "Computer chose: ";
+container.appendChild(computer);
+
+
+const rock = document.getElementById('rock')
+const paper = document.getElementById('paper')
+const scissors = document.getElementById('scissors')
+
+
+rock.addEventListener('click', () => alert("rock"));
+
+//Function to randomly select computer choice based on a random number
+//TODO condense it down a bit?
 function getComputerChoice(){
     let num1 = Math.random();
     if (num1 <= 0.33){
@@ -12,13 +29,8 @@ function getComputerChoice(){
     }
 }
 
-//get player move
-function getPlayerMove() {
-    let ask = prompt("Rock, Paper, Scissors, SHOOT!");
-    return ask.toLowerCase();
-}
-
 //compare scores and decide a victor
+//TODO condense the logic down. if((thisthat) || (thatthis))?
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "It\'s a Tie!";

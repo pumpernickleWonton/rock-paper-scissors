@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 10px;
+    background-color: darkcyan;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: 1px solid black;
+}
+
+.buttonField {
+    display: flex;
+    gap: 25px;
+    justify-content: space-evenly;
+    background-color: cornflowerblue;
+    padding: 20px;
+}
+
+.choiceBtn {
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+}
